@@ -2,14 +2,16 @@
 using BionicalTechTest.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BionicalTechTest.Data.Migrations
 {
     [DbContext(typeof(BionicalContext))]
-    partial class BionicalContextModelSnapshot : ModelSnapshot
+    [Migration("20210614164006_addedAutoKeys")]
+    partial class addedAutoKeys
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

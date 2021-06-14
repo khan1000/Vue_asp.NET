@@ -6,7 +6,8 @@ namespace BionicalTechTest.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View("Features/Home/Index.cshtml");
+            
         }
     }
 }

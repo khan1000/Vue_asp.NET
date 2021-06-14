@@ -30,7 +30,7 @@
             axios.get('/api/users').then((response) => {
                 this.users = response.data;
             }, (error) => {
-                console.log(error);
+                console.log(error); 
             });
         }
     }
@@ -38,6 +38,7 @@
 
 <style lang="css" scoped>
     div {
+        display: contents;
         
     }
 </style>
