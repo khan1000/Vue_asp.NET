@@ -94,8 +94,12 @@
                     .then((res) => {
                         //Perform Success Action
                         console.log("posted");
+                        if (res.status === 200) {
+                            this.$router.push({ path: '/' });
+                        }
                     })
                     .catch((error) => {
+                        alert(error);
                         console.log(error);
                     }).finally(() => {
                         //Perform action in always

@@ -75,7 +75,6 @@
                     City: '',
                     County: '',
                     PostCode: '',
-
                 },
                
             }
@@ -86,17 +85,20 @@
                 axios.post('api/Users/AddUser', this.form)
                     .then((res) => {
                         //Perform Success Action
-                       
                         console.log("posted");
+                        if (res.status === 200)
+                        {
+                            this.$router.push({ path: '/' });
+                        }
                     })
                     .catch((error) => {
                         console.log(error);
+                        alert(error);
                     }).finally(() => {
                         //Perform action in always
                     });
             }
         }
-
 
 
 }

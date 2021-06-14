@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using BionicalTechTest.Data;
 using BionicalTechTest.Data.Entities;
@@ -46,8 +47,16 @@ namespace BionicalTechTest.Features.Users
             user.City = form.City;
             user.County = form.County;
             user.Postcode = form.Postcode;
-
-            _db.SaveChanges();
+            
+            try 
+            { 
+                _db.SaveChanges(); 
+            }
+            catch (Exception e) 
+            {
+                return BadRequest(e);
+            }
+            
 
             return Ok();
 
