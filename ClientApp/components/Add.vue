@@ -1,8 +1,6 @@
 ﻿<template>
     <div>
-        <h1>Add</h1>
-
-    
+        <h1>Add New User!</h1>
 
         <form v-on:submit.prevent="submitForm">
             <div class="form-group">
@@ -19,6 +17,34 @@
             <div class="form-group">
                 <label for="name">Email</label>
                 <input type="text" class="form-control" id="email" placeholder="email" v-model="form.Email">
+            </div>
+
+
+            <div class="form-group">
+                <label for="name">AddressLine1</label>
+                <input type="text" class="form-control" id="Address1" placeholder="address1" v-model="form.AddressLine1">
+            </div>
+
+            <div class="form-group">
+                <label for="name">AddressLine2</label>
+                <input type="text" class="form-control" id="Address2" placeholder="add2" v-model="form.AddressLine2">
+            </div>
+
+            <div class="form-group">
+                <label for="name">City</label>
+                <input type="text" class="form-control" id="email" placeholder="city" v-model="form.City">
+            </div>
+
+
+            <div class="form-group">
+                <label for="name">County</label>
+                <input type="text" class="form-control" id="email" placeholder="County" v-model="form.County">
+            </div>
+
+
+            <div class="form-group">
+                <label for="name">Postcode</label>
+                <input type="text" class="form-control" id="email" placeholder="Postcode" v-model="form.PostCode">
             </div>
 
             <div class="form-group">
@@ -43,7 +69,13 @@
                 form: {
                     Name: '',
                     LastName:'',
-                    Email:''
+                    Email: '',
+                    AddressLine1: '',
+                    AddressLine2: '',
+                    City: '',
+                    County: '',
+                    PostCode: '',
+
                 },
                
             }
@@ -54,6 +86,7 @@
                 axios.post('api/Users/AddUser', this.form)
                     .then((res) => {
                         //Perform Success Action
+                       
                         console.log("posted");
                     })
                     .catch((error) => {
@@ -68,3 +101,5 @@
 
 }
 </script>
+
+

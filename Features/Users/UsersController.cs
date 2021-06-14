@@ -41,6 +41,12 @@ namespace BionicalTechTest.Features.Users
             user.LastName = form.LastName;
             user.Email = form.Email;
 
+            user.AddressLine1 = form.AddressLine1;
+            user.AddressLine2 = form.AddressLine2;
+            user.City = form.City;
+            user.County = form.County;
+            user.Postcode = form.Postcode;
+
             _db.SaveChanges();
 
             return Ok();
@@ -56,7 +62,13 @@ namespace BionicalTechTest.Features.Users
             newuser.FirstName = form.Name;
             newuser.LastName = form.LastName;
             newuser.Email = form.Email;
-  
+
+            newuser.AddressLine1 = form.AddressLine1;
+            newuser.AddressLine2 = form.AddressLine2;
+            newuser.City = form.City;
+            newuser.County = form.County;
+            newuser.Postcode = form.Postcode;
+
             _db.Users.Add(newuser);
             _db.SaveChanges();
 
@@ -71,6 +83,15 @@ namespace BionicalTechTest.Features.Users
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
+
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        
+        public string City { get; set; }
+       
+        public string County { get; set; }
+       
+        public string Postcode { get; set; }
     }
 
    
