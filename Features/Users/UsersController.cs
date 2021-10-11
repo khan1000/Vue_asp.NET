@@ -36,7 +36,7 @@ namespace BionicalTechTest.Features.Users
         [HttpPost]
         public ActionResult EditUser(int id, [FromBody]Form form)
         {
-            var user = _db.Users.Find(id);
+            User user = _db.Users.Find(id);
 
             user.FirstName = form.Name;
             user.LastName = form.LastName;
